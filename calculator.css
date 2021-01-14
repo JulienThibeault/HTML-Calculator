@@ -1,0 +1,104 @@
+:root {
+    --gridPadding: 5vh;
+    --gridGap: 3vh;
+    --buttonWidth: calc((100vh - 10vh - 9vh) / 8);
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 10vw;
+    background-color: black;
+}
+
+/*
+.preload * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+*/
+
+.calculator {
+    padding: var(--gridPadding);
+    column-gap: var(--gridGap);
+    row-gap: var(--gridGap);
+    display: grid;
+    grid-template-columns: repeat(4, var(--buttonWidth));
+    grid-template-rows: 30% repeat(5, var(--buttonWidth));
+    background-color: black;
+    color: white;
+    height: 100vh;
+}
+
+.calculator > div > span, .display {
+    user-select: none;
+}
+
+.display {
+    grid-column: 1 / span 4;
+    place-self: end;
+    font-size: 16vw;
+}
+
+.button {
+    width: 100%;
+    height: 100%;
+    border-radius: 25vw;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zero-button {
+    grid-column: 1 / span 2;
+    grid-row: 6 / 7;
+} 
+
+.zero-number {
+    grid-column: 1 / 2;
+    grid-row: 6 / 7;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.light-grey {
+    background-color: rgb(165, 165, 165);
+    color: black; 
+    transition: background-color .5s ease;
+}
+
+.light-grey:active {
+    background-color: rgb(205, 205, 205);
+    transition: background-color 0s ease;  
+}
+
+.dark-grey {
+    background-color: rgb(51, 51, 51);
+    transition: background-color .5s ease;
+}
+
+.dark-grey:active {
+    background-color: rgb(91, 91, 91);
+    transition: background-color 0s ease;
+}
+
+.orange {
+    background-color: rgb(241, 163, 60);
+    transition: background-color .5s ease;
+}
+
+.orange:active {
+    background-color: rgb(241, 190, 122);
+    transition: background-color 0s ease;
+}
